@@ -1,0 +1,18 @@
+#!/usr/bin/perl -w
+use IO::Handle;
+use POSIX strftime;
+$image = "http://www.hearinghaven.com/wp-content/uploads/2011/08/stop-sign-w-highlights.jpg";
+$|=1;
+$pid = $$;
+while(<>)
+{
+   chomp $_;
+   if($_ =~ /(.*\.(gif|bmp|tiff|ico|jpg|jpeg))/i)
+  {
+      print "$image\n";
+  }  
+  else
+  {
+      print "$_\n";
+  }
+}
